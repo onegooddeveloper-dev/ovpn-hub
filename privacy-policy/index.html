@@ -4,55 +4,186 @@
     <meta charset="UTF-8">
     <title>Privacy Policy – .ovpn Hub</title>
     <style>
+        * { box-sizing: border-box; }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
-            background: #fff;
+            background: #f5f5f5;
             color: #222;
-            line-height: 1.6;
+            line-height: 1.7;
         }
+
+        /* ── HEADER ── */
         header {
-            background: linear-gradient(135deg, #111 25%, #333 100%);
+            background: #000;
             color: #fff;
-            padding: 40px 20px;
-            text-align: center;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
         }
-        header h1 {
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 80% at 50% 120%, rgba(255,144,0,0.18) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at 80% -20%, rgba(255,144,0,0.10) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .header-inner {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 52px 24px 44px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .logo-icon {
+            width: 56px;
+            height: 56px;
+            flex-shrink: 0;
+        }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.1;
+        }
+        .logo-text .dot {
+            color: #FF9000;
+            font-size: 2.2em;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+        .logo-text .appname {
+            color: #fff;
+            font-size: 1.05em;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.75;
+        }
+        .header-divider {
+            width: 48px;
+            height: 2px;
+            background: #FF9000;
+            border-radius: 2px;
+        }
+        .header-title {
             margin: 0;
-            font-size: 2em;
-            letter-spacing: 1px;
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.5px;
         }
+        .header-meta {
+            margin: 0;
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.45);
+            letter-spacing: 0.5px;
+        }
+        .header-badge {
+            display: inline-block;
+            background: rgba(255,144,0,0.12);
+            border: 1px solid rgba(255,144,0,0.35);
+            color: #FF9000;
+            font-size: 0.78em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 3px 12px;
+            border-radius: 999px;
+        }
+        .header-bottom-bar {
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, #FF9000 40%, #ffb347 60%, transparent 100%);
+        }
+
+        /* ── MAIN ── */
         main {
             max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
+            margin: 36px auto;
+            padding: 0 20px 40px;
         }
         h2 {
-            border-bottom: 2px solid #eee;
-            padding-bottom: 6px;
-            margin-top: 30px;
-            font-size: 1.3em;
-            color: #333;
+            border-left: 3px solid #FF9000;
+            padding-left: 12px;
+            margin-top: 36px;
+            margin-bottom: 10px;
+            font-size: 1.15em;
+            color: #111;
+            font-weight: 700;
+        }
+        h3 {
+            margin-top: 22px;
+            font-size: 1em;
+            color: #444;
+            font-weight: 600;
         }
         p, li {
-            margin: 10px 0;
+            margin: 8px 0;
+            color: #333;
         }
         ul {
-            margin: 10px 0 20px 20px;
+            margin: 8px 0 16px 20px;
         }
+        a {
+            color: #c97000;
+            text-decoration: none;
+        }
+        a:hover { text-decoration: underline; }
+        code {
+            background: #f0f0f0;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        /* ── FOOTER ── */
         footer {
             text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
-            color: #666;
-            border-top: 1px solid #eee;
+            padding: 24px 20px;
+            font-size: 0.85em;
+            color: #888;
+            border-top: 1px solid #e0e0e0;
+            background: #fafafa;
         }
+        footer span { color: #FF9000; }
     </style>
 </head>
 <body>
+
 <header>
-    <h1>Privacy Policy</h1>
-    <p>Last updated: 2026‑04‑26</p>
+    <div class="header-inner">
+        <div class="logo-wrap">
+            <svg class="logo-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="56" height="56" rx="14" fill="#151515"/>
+                <path d="M28 10 L44 17 L44 29 C44 38 36 44.5 28 47 C20 44.5 12 38 12 29 L12 17 Z"
+                      fill="none" stroke="#FF9000" stroke-width="2.2" stroke-linejoin="round"/>
+                <circle cx="28" cy="28" r="7" fill="none" stroke="#FF9000" stroke-width="2"/>
+                <circle cx="28" cy="28" r="2.5" fill="#FF9000"/>
+                <line x1="28" y1="21" x2="28" y2="18" stroke="#FF9000" stroke-width="1.8" stroke-linecap="round"/>
+                <line x1="28" y1="35" x2="28" y2="38" stroke="#FF9000" stroke-width="1.8" stroke-linecap="round"/>
+                <line x1="21" y1="28" x2="18" y2="28" stroke="#FF9000" stroke-width="1.8" stroke-linecap="round"/>
+                <line x1="35" y1="28" x2="38" y2="28" stroke="#FF9000" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <div class="logo-text">
+                <span class="dot">.ovpn</span>
+                <span class="appname">Hub</span>
+            </div>
+        </div>
+        <div class="header-divider"></div>
+        <h1 class="header-title">Privacy Policy</h1>
+        <span class="header-badge">Last updated: 2026‑04‑26</span>
+    </div>
+    <div class="header-bottom-bar"></div>
 </header>
 <main>
     <p><strong>Developer:</strong> One Good Dev</p>
@@ -175,7 +306,7 @@
 
 </main>
 <footer>
-    &copy; 2026 One Good Dev – .ovpn Hub
+    &copy; 2026 <span>One Good Dev</span> &mdash; .ovpn Hub
 </footer>
 </body>
 </html>
