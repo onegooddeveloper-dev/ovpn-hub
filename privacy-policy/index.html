@@ -157,7 +157,7 @@
         </div>
         <div class="header-divider"></div>
         <h1 class="header-title">Privacy Policy</h1>
-        <span class="header-badge">Last updated: 2026‑06‑13</span>
+        <span class="header-badge">Last updated: 2026‑07‑04</span>
     </div>
     <div class="header-bottom-bar"></div>
 </header>
@@ -250,7 +250,7 @@
     <ul>
         <li>Network request data: We do not retain your original IP address beyond what is necessary to perform diagnostics.</li>
         <li>Local app data (Hive CE cache): Stored on your device until you clear the app data or uninstall the App.</li>
-        <li>Purchase and subscription data: Retained by RevenueCat as long as necessary to provide subscription management services and as required by applicable law. You may request deletion of your RevenueCat customer data by contacting us (see Section 15); we will forward the request to RevenueCat.</li>
+        <li>Purchase and subscription data: Retained by RevenueCat as long as necessary to provide subscription management services and as required by applicable law. You may request deletion of your RevenueCat customer data at any time (see Section 13, "Data deletion requests").</li>
     </ul>
 
     <h2>10. International data routing</h2>
@@ -264,19 +264,38 @@
     <ul>
         <li>Reset or limit your device's advertising identifier in system settings.</li>
         <li>Clear the App's local data or uninstall the App to remove locally stored cache.</li>
+        <li>Request deletion of the data we hold about your installation (see Section 13, "Data deletion requests").</li>
     </ul>
 
-    <h2>13. Third‑party links</h2>
+    <h2 id="data-deletion">13. Data deletion requests</h2>
+    <p>You can request deletion of the data associated with your app installation even though the App has no accounts or registration. Email <a href="mailto:one.good.developer@gmail.com">one.good.developer@gmail.com</a> with the subject "Data deletion request" and include one of the following so we can locate your records:</p>
+    <ul>
+        <li>your <strong>Support ID</strong> — the anonymous app user ID shown in the App (Settings → About), where available in your app version; or</li>
+        <li>your Google Play order number (starts with <code>GPA.</code>) if your request concerns a Premium purchase.</li>
+    </ul>
+    <p>Upon a verified request we will, within 30 days:</p>
+    <ul>
+        <li>delete your RevenueCat customer record (anonymous app user ID, purchase history, and subscription status);</li>
+        <li>delete any support correspondence containing your personal data, unless retention is required by law (e.g., tax or accounting rules for purchase records).</li>
+    </ul>
+    <p>Data not held by us that you control directly:</p>
+    <ul>
+        <li>The Android advertising ID can be reset or deleted at any time in your device settings (Settings → Google → Ads); this severs the link between past ad data and your device.</li>
+        <li>Locally cached data (server lists, favorites, measurements, downloaded .ovpn files) is removed by clearing the App's storage or uninstalling the App.</li>
+        <li>Crash diagnostics and analytics events are stored in aggregate form and expire automatically under Firebase's standard retention periods.</li>
+    </ul>
+
+    <h2>14. Third‑party links</h2>
     <p>The App may contain links to third‑party sites or services (e.g., VPN Gate information). We are not responsible for their privacy practices. Review their policies before use.</p>
 
-    <h2>14. Changes to this policy</h2>
+    <h2>15. Changes to this policy</h2>
     <p>We may update this Privacy Policy from time to time. If we make material changes, we will update the "Last updated" date above. Your continued use of the App after the effective date constitutes acceptance of the updated policy.</p>
 
-    <h2>15. Contact us</h2>
+    <h2>16. Contact us</h2>
     <ul>
         <li>Developer: One Good Dev</li>
         <li>Email: <a href="mailto:one.good.developer@gmail.com">one.good.developer@gmail.com</a></li>
-        <li>Privacy Policy URL: <a href="https://sites.google.com/view/one-good-dev-vpn-hub" target="_blank">https://sites.google.com/view/one-good-dev-vpn-hub</a></li>
+        <li>Privacy Policy URL: <a href="https://onegooddeveloper-dev.github.io/ovpn-hub/privacy-policy" target="_blank">https://onegooddeveloper-dev.github.io/ovpn-hub/privacy-policy</a></li>
     </ul>
     <p>We welcome feedback to improve our products.</p>
 
@@ -285,10 +304,11 @@
         <li>No account is required; the App does not provide VPN connections or handle VPN traffic.</li>
         <li>Transient IP use for diagnostics; network diagnostics include ICMP ping to VPN endpoints.</li>
         <li>Local caching on device via Hive CE (server lists, favorites, metrics, .ovpn files) — not uploaded to our servers.</li>
-        <li><strong>Financial Info — Purchase history</strong>: Collected by RevenueCat for App functionality and Analytics. Used to validate Premium subscriptions and manage entitlements. Data encrypted in transit.</li>
-        <li>Monetization via Google Mobile Ads (AdMob); advertising identifiers and device information may be processed by Google, with consent where required.</li>
+        <li><strong>Financial Info — Purchase history</strong>: Collected by RevenueCat for App functionality and Analytics; <strong>not shared</strong> with third parties — RevenueCat processes it solely on our behalf as a service provider. Used to validate Premium subscriptions and manage entitlements. Data encrypted in transit.</li>
+        <li><strong>Advertising data — collected and shared with Google</strong>: Monetization via Google Mobile Ads (AdMob) involves device or other IDs (advertising ID, app set ID), app interactions, app performance diagnostics, and approximate location inferred from IP address, processed by Google for advertising and fraud prevention, with consent where required (UMP, EEA/UK).</li>
         <li><strong>App activity — App interactions</strong>: Firebase Analytics tracks anonymised feature usage (exports, filters, health checks, ad interactions). Disabled via UMP consent if declined.</li>
         <li><strong>Diagnostics — Crash data</strong>: Firebase Crashlytics collects crash reports (stack trace, device info) for stability fixes.</li>
+        <li><strong>Data deletion</strong>: Available on request (see Section 13) — RevenueCat customer records are deleted within 30 days; the advertising ID can be reset or deleted in device settings.</li>
         <li>VPN sources and third‑party VPN apps/servers are outside our control and may have their own logging practices; review their privacy notes.</li>
     </ul>
 
