@@ -157,7 +157,7 @@
         </div>
         <div class="header-divider"></div>
         <h1 class="header-title">Privacy Policy</h1>
-        <span class="header-badge">Last updated: 2026‑07‑04</span>
+        <span class="header-badge">Last updated: 2026‑08‑13</span>
     </div>
     <div class="header-bottom-bar"></div>
 </header>
@@ -167,25 +167,29 @@
     <p>By using the App, you agree to the collection and use of information in accordance with this policy. If you do not agree, please do not use the App.</p>
 
     <h2>1. Who we are and scope</h2>
-    <p>The App is developed and published by "one dev." This Privacy Policy applies to the .ovpn Hub mobile application and any in‑app features that link to this policy.</p>
+    <p>The App is developed and published by One Good Dev. This Privacy Policy applies to the .ovpn Hub mobile application and any in‑app features that link to this policy.</p>
 
     <h2>2. Age restrictions</h2>
     <p>The App is not intended for children under 13 years of age. We do not knowingly collect personal data from children under 13. If you are a parent or guardian and believe your child has provided personal data, please contact us so we can take appropriate action.</p>
 
     <h2>3. Key assurances about VPN connections</h2>
     <ul>
-        <li>The App does not provide or establish a VPN connection and does not route your internet traffic.</li>
+        <li>The App does not provide or establish a VPN connection and does not route your internet traffic. This applies equally to OpenVPN (.ovpn) configurations and to V2Ray configurations (VLESS, VMess, Trojan, Shadowsocks, TUIC, Hysteria2): the App displays, tests, and hands them over to a separate client application, and never connects through them itself.</li>
         <li>We do not record, store, or log your VPN browsing activity (the websites you visit, the content you view, or the data you transmit).</li>
         <li>Your device's IP address may be used transiently for diagnostics; we do not retain it beyond what is technically necessary to perform those requests.</li>
     </ul>
 
     <h2>4. How the App works (configuration hub)</h2>
-    <p>.ovpn Hub does not operate VPN servers and does not connect you to VPNs. The App aggregates .ovpn configuration files from public sources and lets you download, share, and transfer those files to OpenVPN‑compatible applications.</p>
+    <p>.ovpn Hub does not operate VPN servers and does not connect you to VPNs. The App aggregates configuration data from public sources and lets you inspect, test, share, and transfer it to a compatible client application. Two kinds of configuration are supported:</p>
     <ul>
-        <li>The App works with multiple sources of .ovpn files because it is a hub for configurations.</li>
+        <li><strong>OpenVPN configuration files (.ovpn)</strong> — downloaded from public sources and exported to OpenVPN‑compatible applications.</li>
+        <li><strong>V2Ray configuration URIs</strong> — public configuration links using the VLESS, VMess, Trojan, Shadowsocks, TUIC, and Hysteria2 protocols. The App parses the URI to display its parameters (server, transport, TLS/REALITY status), and can copy it to the clipboard, share it, or hand it to a V2Ray‑compatible client at your explicit action.</li>
+    </ul>
+    <ul>
+        <li>The App works with multiple sources because it is a hub for configurations.</li>
         <li>Example source: VPN Gate (University of Tsukuba) — <a href="https://www.vpngate.net" target="_blank">https://www.vpngate.net</a></li>
         <li>Important: Public sources and third‑party VPN servers may have their own logging or privacy practices which we do not control. Review the source's privacy information (e.g., <a href="https://www.vpngate.net/en/about_privacy.aspx" target="_blank">VPN Gate Privacy</a>).</li>
-        <li>When you use an .ovpn file in another VPN application, your traffic will be routed by that third‑party app/server, not by .ovpn Hub.</li>
+        <li>When you use a configuration in another VPN application, your traffic will be routed by that third‑party app/server, not by .ovpn Hub.</li>
     </ul>
 
     <h2>5. Information we collect</h2>
@@ -204,23 +208,25 @@
         <li>In‑app interaction data: Firebase Analytics tracks anonymised events such as exports, filters, sorting, health checks, and ad interactions (listed in Section 6) to improve UX and inform product decisions. This constitutes <strong>App activity — App interactions</strong> under Google Play's Data Safety framework. If you decline consent via the UMP form (EEA/UK), Analytics is disabled.</li>
         <li>Crash diagnostics: Firebase Crashlytics collects crash reports, stack traces, device model, OS version, and free memory to diagnose and fix bugs. This constitutes <strong>Diagnostics — Crash data</strong> under Google Play's Data Safety framework.</li>
         <li>Local notifications: The App may send local notifications to inform you when a VPN health check is complete. Notifications can be disabled at any time in your device settings.</li>
-        <li>Purchase history and subscription status: If you purchase a Premium subscription, the App sends your purchase receipt and subscription status to RevenueCat (see Section 6) for validation and entitlement management. This constitutes <strong>Financial Info — Purchase history</strong> under Google Play's Data Safety framework. We do not have access to your payment card details; those are handled exclusively by Google Play.</li>
+        <li>Purchase history: If you buy Ovpn Hub Pro, the App sends your purchase receipt to RevenueCat (see Section 6) for validation and entitlement management. Pro is a <strong>one‑time, non‑consumable purchase</strong> — there is no subscription, no recurring billing, and nothing to cancel. This constitutes <strong>Financial Info — Purchase history</strong> under Google Play's Data Safety framework. We do not have access to your payment card details; those are handled exclusively by Google Play.</li>
+        <li>Presence of a compatible VPN client: To tell you whether a configuration can be opened, the App checks whether a compatible client application is present on your device. On Android this uses targeted package visibility declared in the app manifest — the App can only see the specific clients it declares (for example <code>com.v2raytun.android</code> and <code>com.v2ray.client</code>) and applications that handle the relevant link types; it does not enumerate your installed applications. Whether an OpenVPN‑compatible client was found is sent to Firebase Analytics as a single yes/no property (<code>openvpn_client_installed</code>) so we can measure how many users are blocked at this step. The names of your other applications are never collected. This constitutes <strong>App activity — Installed apps</strong> under Google Play's Data Safety framework, limited to that single yes/no signal.</li>
     </ul>
 
     <h3>5.3 Local storage on your device</h3>
-    <p>We use on‑device storage via Hive CE to cache data such as server lists, favorite servers, ping/speed results, downloaded .ovpn files, and UI preferences. This data remains on your device unless you uninstall the App or clear the App's data. We do not upload this cache to our own servers.</p>
+    <p>We use on‑device storage via Hive CE to cache data such as server lists, favorite servers, ping/speed results, downloaded .ovpn files, V2Ray configuration URIs, and UI preferences. This data remains on your device unless you uninstall the App or clear the App's data. We do not upload this cache to our own servers.</p>
 
     <h2>6. Third‑party services and SDKs</h2>
     <ul>
         <li><strong>VPN Gate</strong> – Purpose: Fetch public VPN server configurations for download and sharing. Privacy: <a href="https://www.vpngate.net/en/about_privacy.aspx" target="_blank">vpngate.net/en/about_privacy.aspx</a></li>
         <li><strong>Google Mobile Ads (AdMob)</strong> – Potential data collected by Google: advertising identifiers (AAID/IDFA), IP address, device and app information, approximate location inferred from IP, ad interaction/engagement data, and crash/diagnostic signals. User controls: Reset or limit ad personalization in device settings. For EEA/UK users, a consent form via Google's UMP is shown where required by law. Learn more: <a href="https://policies.google.com/technologies/partner-sites" target="_blank">Google Partner Sites Policy</a></li>
         <li><strong>In‑App Review (Google Play / Apple App Store)</strong> – Purpose: Native review prompt after sufficient use. The dialog is rendered by the platform, not the App. We do not receive or store your rating or review text.</li>
-        <li><strong>RevenueCat</strong> – Purpose: Manage Premium subscription purchases, validate receipts, and track entitlement status across reinstalls. Data collected: an anonymous App User ID (generated by the SDK and cached on device), purchase history (product IDs, transaction IDs, subscription status), and device information for analytics. Data is encrypted in transit and processed for App functionality and Analytics. RevenueCat does not collect payment card details. Privacy policy: <a href="https://www.revenuecat.com/privacy/" target="_blank">revenuecat.com/privacy</a></li>
-        <li><strong>Google Play Billing</strong> – Purpose: Process subscription payments. Payment card information is handled entirely by Google Play; the App never receives or stores it. Privacy: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
-        <li><strong>Firebase Analytics</strong> – Purpose: Collect anonymised in-app interaction data (12 custom events: ad_shown, refresh_list, vpn_export, filter_applied, sort_applied, find_best_server, bulk_check_started, single_check, vpn_tab_selected, config_value_shared, ta_key_downloaded, ad_dismissed_without_reward). No PII (email, name, IP) is passed in event parameters. Data is used for product analytics and quality improvements. Respects UMP consent — disabled if user declines. Privacy: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+        <li><strong>RevenueCat</strong> – Purpose: Validate the receipt for the one‑time Ovpn Hub Pro purchase and restore that entitlement across reinstalls. Data collected: an anonymous App User ID (generated by the SDK and cached on device), purchase history (product IDs, transaction IDs, entitlement status), and device information for analytics. Data is encrypted in transit and processed for App functionality and Analytics. RevenueCat does not collect payment card details. Privacy policy: <a href="https://www.revenuecat.com/privacy/" target="_blank">revenuecat.com/privacy</a></li>
+        <li><strong>Google Play Billing</strong> – Purpose: Process the one‑time Pro purchase. Payment card information is handled entirely by Google Play; the App never receives or stores it. Privacy: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+        <li><strong>Firebase Analytics</strong> – Purpose: Collect anonymised in‑app interaction data. Custom events: ad_shown, ad_dismissed_without_reward, refresh_list, vpn_export, server_opened, config_value_shared, ta_key_downloaded, bulk_check_started, single_check, find_best_server, filter_applied, sort_applied, vpn_tab_selected, onboarding_funnel, connect_funnel, vpn_aidl_bind, vpn_aidl_connect, vpn_aidl_disconnect, vpn_aidl_error, vpn_connected. One user property is set: openvpn_client_installed (see Section 5.2). No PII (email, name, IP) is passed in event parameters, and no configuration content, server address, or V2Ray URI is ever sent as a parameter. Data is used for product analytics and quality improvements. Respects UMP consent — disabled if user declines. Privacy: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
         <li><strong>Firebase Crashlytics</strong> – Purpose: Crash and error reporting. Collects stack traces, device model, OS version, free memory, and app version at the time of a crash. No custom keys or user identifiers are set. Privacy: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
         <li><strong>Ipify</strong> – Purpose: Display your current public IPv4 address inside the App. Site: <a href="https://www.ipify.org/" target="_blank">ipify.org</a></li>
         <li><strong>OpenVPN‑compatible VPN applications (third‑party)</strong> – Purpose: Open or transfer .ovpn files to third‑party VPN apps. Those apps and servers operate under their own policies.</li>
+        <li><strong>V2Ray‑compatible client applications (third‑party)</strong> – Purpose: Hand a V2Ray configuration URI to a client you choose, such as v2RayTun or v2rayNG, at your explicit action. The hand‑off passes only the configuration itself; the App sends no personal data with it. Once imported, the connection and any logging are governed entirely by that client and the server operator, under their own policies. The App is not affiliated with the V2Ray, Xray, v2rayNG, or v2RayTun projects.</li>
         <li><strong>Networking and storage libraries</strong> (code dependencies): <code>dio</code>, <code>retrofit</code>, <code>hive_ce</code>, <code>icmp_ping</code>, <code>ipify</code>, <code>logger</code>, <code>in_app_review</code>, <code>share_plus</code>, <code>open_file</code>, <code>file_saver</code>, <code>package_info_plus</code>, <code>device_type</code>. These libraries do not, by themselves, transmit your data to the developer.</li>
     </ul>
     <p>Note: Third‑party volunteer VPN servers are outside our control and may maintain their own logs for abuse prevention or legal compliance. Review the server's country laws and privacy notes before use.</p>
@@ -238,9 +244,9 @@
 
     <h2>8. How we use information</h2>
     <ul>
-        <li>Provide the App's core features (download, share, and transfer .ovpn files; retrieve server lists).</li>
+        <li>Provide the App's core features (retrieve server lists; download, share, and transfer .ovpn files and V2Ray configuration URIs).</li>
         <li>Validate VPN servers and measure network quality (ping/speed) to help you assess configurations.</li>
-        <li>Manage Premium subscriptions: verify purchase receipts, grant or revoke entitlements, and restore purchases.</li>
+        <li>Manage the one‑time Pro purchase: verify the purchase receipt, grant the entitlement, and restore it after a reinstall.</li>
         <li>Diagnose problems and improve reliability.</li>
         <li>Display advertising, subject to consent where required.</li>
     </ul>
@@ -250,7 +256,7 @@
     <ul>
         <li>Network request data: We do not retain your original IP address beyond what is necessary to perform diagnostics.</li>
         <li>Local app data (Hive CE cache): Stored on your device until you clear the app data or uninstall the App.</li>
-        <li>Purchase and subscription data: Retained by RevenueCat as long as necessary to provide subscription management services and as required by applicable law. You may request deletion of your RevenueCat customer data at any time (see Section 13, "Data deletion requests").</li>
+        <li>Purchase data: Retained by RevenueCat as long as necessary to keep your Pro entitlement restorable and as required by applicable law. You may request deletion of your RevenueCat customer data at any time (see Section 13, "Data deletion requests").</li>
     </ul>
 
     <h2>10. International data routing</h2>
@@ -270,18 +276,18 @@
     <h2 id="data-deletion">13. Data deletion requests</h2>
     <p>You can request deletion of the data associated with your app installation even though the App has no accounts or registration. Email <a href="mailto:one.good.developer@gmail.com">one.good.developer@gmail.com</a> with the subject "Data deletion request" and include one of the following so we can locate your records:</p>
     <ul>
-        <li>your <strong>Support ID</strong> — the anonymous app user ID shown in the App (Settings → About), where available in your app version; or</li>
-        <li>your Google Play order number (starts with <code>GPA.</code>) if your request concerns a Premium purchase.</li>
+        <li>your <strong>Support ID</strong> — the anonymous app user ID shown at the bottom of the App's side menu (tap it to copy), where available in your app version; or</li>
+        <li>your Google Play order number (starts with <code>GPA.</code>) if your request concerns a Pro purchase.</li>
     </ul>
     <p>Upon a verified request we will, within 30 days:</p>
     <ul>
-        <li>delete your RevenueCat customer record (anonymous app user ID, purchase history, and subscription status);</li>
+        <li>delete your RevenueCat customer record (anonymous app user ID, purchase history, and entitlement status);</li>
         <li>delete any support correspondence containing your personal data, unless retention is required by law (e.g., tax or accounting rules for purchase records).</li>
     </ul>
     <p>Data not held by us that you control directly:</p>
     <ul>
         <li>The Android advertising ID can be reset or deleted at any time in your device settings (Settings → Google → Ads); this severs the link between past ad data and your device.</li>
-        <li>Locally cached data (server lists, favorites, measurements, downloaded .ovpn files) is removed by clearing the App's storage or uninstalling the App.</li>
+        <li>Locally cached data (server lists, favorites, measurements, downloaded .ovpn files, V2Ray configuration URIs) is removed by clearing the App's storage or uninstalling the App.</li>
         <li>Crash diagnostics and analytics events are stored in aggregate form and expire automatically under Firebase's standard retention periods.</li>
     </ul>
 
@@ -301,10 +307,11 @@
 
     <h2>Short summary (for Google Play Data safety mapping)</h2>
     <ul>
-        <li>No account is required; the App does not provide VPN connections or handle VPN traffic.</li>
+        <li>No account is required; the App does not provide VPN connections or handle VPN traffic, for either OpenVPN or V2Ray configurations.</li>
         <li>Transient IP use for diagnostics; network diagnostics include ICMP ping to VPN endpoints.</li>
-        <li>Local caching on device via Hive CE (server lists, favorites, metrics, .ovpn files) — not uploaded to our servers.</li>
-        <li><strong>Financial Info — Purchase history</strong>: Collected by RevenueCat for App functionality and Analytics; <strong>not shared</strong> with third parties — RevenueCat processes it solely on our behalf as a service provider. Used to validate Premium subscriptions and manage entitlements. Data encrypted in transit.</li>
+        <li>Local caching on device via Hive CE (server lists, favorites, metrics, .ovpn files, V2Ray configuration URIs) — not uploaded to our servers.</li>
+        <li><strong>Financial Info — Purchase history</strong>: Collected by RevenueCat for App functionality and Analytics; <strong>not shared</strong> with third parties — RevenueCat processes it solely on our behalf as a service provider. Used to validate the one‑time Pro purchase and restore the entitlement. There is no subscription. Data encrypted in transit.</li>
+        <li><strong>App activity — Installed apps</strong>: A single yes/no signal for whether an OpenVPN‑compatible client is present, sent to Firebase Analytics. Package visibility is limited to the specific clients declared in the app manifest; your other applications are never enumerated or reported.</li>
         <li><strong>Advertising data — collected and shared with Google</strong>: Monetization via Google Mobile Ads (AdMob) involves device or other IDs (advertising ID, app set ID), app interactions, app performance diagnostics, and approximate location inferred from IP address, processed by Google for advertising and fraud prevention, with consent where required (UMP, EEA/UK).</li>
         <li><strong>App activity — App interactions</strong>: Firebase Analytics tracks anonymised feature usage (exports, filters, health checks, ad interactions). Disabled via UMP consent if declined.</li>
         <li><strong>Diagnostics — Crash data</strong>: Firebase Crashlytics collects crash reports (stack trace, device info) for stability fixes.</li>
